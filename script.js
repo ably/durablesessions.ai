@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const animatedElements = document.querySelectorAll(
     '.boundary-card, .convergence-card, .reference-card, .stat, ' +
     '.sse-banner, .definition-block, .where-diagram, ' +
-    '.category-comparison, .litmus-test'
+    '.category-comparison, .vendor-list'
   );
 
   animatedElements.forEach((el) => observer.observe(el));

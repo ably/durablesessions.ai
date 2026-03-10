@@ -313,10 +313,11 @@
     <div class="container">
       <div class="section__header">
         <span class="section__eyebrow">The problem</span>
-        <h2 class="section__title">Nobody owns the session</h2>
+        <h2 class="section__title">The session has no home</h2>
         <p class="section__lead">
           AI agents have state. Durable execution platforms persist workflow state. Databases store data.
-          None of them own the <em>session</em> &mdash; the stateful interaction between an agent and the humans it serves.
+          But it's not clear which layer in the AI infrastructure stack should own the <em>session</em> &mdash;
+          the stateful interaction between an agent and the humans it serves.
         </p>
       </div>
 
@@ -533,18 +534,60 @@
         </div>
       </div>
       <p class="stats-source">Based on a cross-vendor synthesis of 35 AI infrastructure vendors, March 2026</p>
+
+      <div class="vendor-list">
+        <h3 class="vendor-list__title">Vendors analysed</h3>
+        <div class="vendor-list__grid">
+          <a href="https://ably.com/ai-transport" target="_blank" rel="noopener">Ably</a>
+          <a href="https://www.pubnub.com" target="_blank" rel="noopener">PubNub</a>
+          <a href="https://pusher.com" target="_blank" rel="noopener">Pusher</a>
+          <a href="https://www.emqx.io" target="_blank" rel="noopener">EMQX</a>
+          <a href="https://electric-sql.com" target="_blank" rel="noopener">ElectricSQL</a>
+          <a href="https://vercel.com/ai" target="_blank" rel="noopener">Vercel AI SDK</a>
+          <a href="https://www.langchain.com" target="_blank" rel="noopener">LangChain</a>
+          <a href="https://www.langchain.com/langgraph" target="_blank" rel="noopener">LangGraph</a>
+          <a href="https://tanstack.com/ai" target="_blank" rel="noopener">TanStack AI</a>
+          <a href="https://ag-ui.com" target="_blank" rel="noopener">AG-UI</a>
+          <a href="https://temporal.io" target="_blank" rel="noopener">Temporal</a>
+          <a href="https://restate.dev" target="_blank" rel="noopener">Restate</a>
+          <a href="https://www.inngest.com" target="_blank" rel="noopener">Inngest</a>
+          <a href="https://upstash.com" target="_blank" rel="noopener">Upstash</a>
+          <a href="https://www.convex.dev" target="_blank" rel="noopener">Convex</a>
+          <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>
+          <a href="https://firebase.google.com" target="_blank" rel="noopener">Firebase</a>
+          <a href="https://www.crewai.com" target="_blank" rel="noopener">CrewAI</a>
+          <a href="https://developers.cloudflare.com/agents" target="_blank" rel="noopener">Cloudflare Agents</a>
+          <a href="https://livekit.io" target="_blank" rel="noopener">LiveKit</a>
+          <a href="https://getstream.io" target="_blank" rel="noopener">Stream</a>
+          <a href="https://sendbird.com" target="_blank" rel="noopener">Sendbird</a>
+          <a href="https://www.twilio.com" target="_blank" rel="noopener">Twilio</a>
+          <a href="https://socket.io" target="_blank" rel="noopener">Socket.IO</a>
+          <a href="https://centrifugal.dev" target="_blank" rel="noopener">Centrifugo</a>
+          <a href="https://nats.io" target="_blank" rel="noopener">NATS</a>
+          <a href="https://www.rabbitmq.com" target="_blank" rel="noopener">RabbitMQ</a>
+          <a href="https://kafka.apache.org" target="_blank" rel="noopener">Apache Kafka</a>
+          <a href="https://azure.microsoft.com/en-gb/products/signalr-service" target="_blank" rel="noopener">Azure SignalR</a>
+          <a href="https://aws.amazon.com/api-gateway" target="_blank" rel="noopener">AWS API Gateway</a>
+          <a href="https://cloud.google.com/pubsub" target="_blank" rel="noopener">Google Pub/Sub</a>
+          <a href="https://www.cometchat.com" target="_blank" rel="noopener">CometChat</a>
+          <a href="https://knock.app" target="_blank" rel="noopener">Knock</a>
+          <a href="https://www.courier.com" target="_blank" rel="noopener">Courier</a>
+          <a href="https://docs.modelcontextprotocol.io" target="_blank" rel="noopener">MCP Protocol</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Why category -->
-  <section class="section" id="why-category">
+  <!-- Why infrastructure -->
+  <section class="section" id="why-infrastructure">
     <div class="container">
       <div class="section__header">
-        <span class="section__eyebrow">Why this is a category</span>
+        <span class="section__eyebrow">An emerging AI infrastructure layer</span>
         <h2 class="section__title">Not a feature. A layer.</h2>
         <p class="section__lead">
-          A feature is "sessions that don't break." A category is the infrastructure layer that makes it
-          possible to build AI experiences that work across <em>every</em> boundary.
+          A feature is "sessions that don't break." An infrastructure layer is what makes it
+          possible to build AI experiences that work across <em>every</em> boundary &mdash; disconnects,
+          devices, agents, modalities, and time.
         </p>
       </div>
 
@@ -568,18 +611,6 @@
             <li><strong>Mental model:</strong> "Build AI experiences as if disconnects don't exist"</li>
           </ul>
         </div>
-      </div>
-
-      <div class="litmus-test">
-        <h3>The litmus test</h3>
-        <p>
-          Is the agent-side and client-side code <em>simpler</em>, dealing with <em>fewer edge cases</em>,
-          and easier to reason about than what teams build today?
-        </p>
-        <p class="litmus-test__result">
-          If we've absorbed the complexity, we've succeeded.<br>
-          If we've added a layer that makes things harder, we've failed.
-        </p>
       </div>
     </div>
   </section>
@@ -645,8 +676,15 @@
     <div class="container">
       <div class="footer__content">
         <div class="footer__message">
-          <p>This is an open resource documenting the emergence of Durable Sessions as an infrastructure category.</p>
-          <p class="footer__cta">The layer is forming. The question is who will build it.</p>
+          <p>
+            Multiple vendors are already building toward durable sessions &mdash; each from a different angle,
+            all converging on the same need. Durable Sessions is rapidly becoming a recognised part of the
+            AI infrastructure stack. Exciting times as this evolves.
+          </p>
+          <p class="footer__contribute">
+            This is an open resource. If you have updates, corrections, or new references to share,
+            <a href="https://github.com/ably/durablesessions.ai" target="_blank" rel="noopener">raise an issue or open a PR</a>.
+          </p>
         </div>
         <div class="footer__meta">
           <p>&copy; 2026 durablesessions.ai</p>
