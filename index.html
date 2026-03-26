@@ -6,7 +6,7 @@
   <title>Durable Sessions &mdash; The Missing Layer</title>
   <meta name="description" content="Durable Sessions is the emerging infrastructure category for AI experiences that survive disconnects, span devices, and outlive any single connection.">
   <meta property="og:title" content="Durable Sessions &mdash; The Missing Layer">
-  <meta property="og:description" content="The infrastructure layer between AI agents and human devices. Sessions that survive.">
+  <meta property="og:description" content="The infrastructure layer between AI agents and users. Sessions that survive.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://durablesessions.ai">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,8 @@
       <a href="#problem">The Gap</a>
       <a href="#what">Definition</a>
       <a href="#convergence">Convergence</a>
-      <a href="#references">References</a>
+      <a href="#developers">Developers</a>
+      <a href="#talking">Discussion</a>
     </div>
   </nav>
 
@@ -57,7 +58,7 @@
       <div class="hero__badge">An emerging infrastructure category</div>
       <h1 class="hero__title">
         The missing layer<br>
-        <span class="hero__title--gradient">between AI and humans</span>
+        <span class="hero__title--gradient">between AI agents and users</span>
       </h1>
       <p class="hero__subtitle">
         Durable Execution made backends crash-proof.<br>
@@ -380,10 +381,10 @@
           <span class="sse-banner__label">The signal</span>
           <h2 class="sse-banner__title">The incumbent protocol has been declared inadequate</h2>
           <p class="sse-banner__text">
-            The MCP protocol deprecated SSE in favour of Streamable HTTP. Vercel built a pluggable
+            AG-UI deprecated SSE as its reference transport. Vercel built a pluggable
             <code>ChatTransport</code> interface and told the community to bring their own WebSocket
             implementations. TanStack AI shipped a <code>ConnectionAdapter</code> designed for third-party
-            transport providers. AG-UI built pluggable transport from the ground up.
+            transport providers. CrewAI explicitly rejected building transport features as "not planned."
           </p>
           <p class="sse-banner__kicker">
             The ecosystem has diagnosed the problem, designed the plugin points, and is waiting for someone to show up with the infrastructure.
@@ -429,6 +430,31 @@
         </div>
       </div>
 
+      <!-- Three problem areas -->
+      <div class="boundary-grid" style="margin-top: 3rem;">
+        <div class="boundary-card">
+          <div class="boundary-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Reliable streaming and resilience</h3>
+          <p>Streams that survive disconnects, proxy interference, and reconnections. No corrupted state, no lost tokens. The stream picks up where it left off.</p>
+        </div>
+        <div class="boundary-card">
+          <div class="boundary-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01" stroke-linecap="round"/><rect x="2" y="7" width="8" height="5" rx="1" opacity="0.4"/></svg>
+          </div>
+          <h3>Session continuity across surfaces</h3>
+          <p>The same session accessible from any device. Start on your laptop, continue on your phone. Three delivery paths: connected (realtime), reconnecting (catch-up), offline (push notification).</p>
+        </div>
+        <div class="boundary-card">
+          <div class="boundary-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Agent visibility and coordination</h3>
+          <p>Is the agent thinking or crashed? When multiple agents work the same session, who's doing what? Presence, health signals, bidirectional control, and human takeover.</p>
+        </div>
+      </div>
+
       <!-- Stack diagram -->
       <div class="where-diagram">
         <h3 class="where-diagram__title">Where it sits in the stack</h3>
@@ -465,8 +491,8 @@
       <div class="convergence-grid">
         <div class="convergence-card">
           <div class="convergence-card__name">ElectricSQL</div>
-          <div class="convergence-card__what">Published a "Durable Sessions" blog post with reference implementation using Durable Streams + TanStack DB</div>
-          <div class="convergence-card__date">January 2026</div>
+          <div class="convergence-card__what">Published "Durable Sessions" blog post (Jan 2026). Shipped Durable Streams protocol (1,400 GitHub stars). Announced "Durable Transports" adapters for TanStack AI and Vercel AI SDK (Mar 2026).</div>
+          <div class="convergence-card__date">Dec 2025 &ndash; Mar 2026</div>
         </div>
         <div class="convergence-card">
           <div class="convergence-card__name">EMQX</div>
@@ -494,8 +520,13 @@
           <div class="convergence-card__date">Agent component</div>
         </div>
         <div class="convergence-card">
+          <div class="convergence-card__name">Temporal</div>
+          <div class="convergence-card__what">Coined "Durable Execution" ($5B valuation). Their community recommends external realtime providers for frontend delivery &mdash; the complementary layer to durable sessions.</div>
+          <div class="convergence-card__date">Established category</div>
+        </div>
+        <div class="convergence-card">
           <div class="convergence-card__name">AG-UI</div>
-          <div class="convergence-card__what">Pluggable transport architecture. The protocol moved beyond fixed transport assumptions.</div>
+          <div class="convergence-card__what">Deprecated SSE (Aug 2025). Built pluggable transport from the ground up &mdash; the protocol moved beyond fixed transport assumptions.</div>
           <div class="convergence-card__date">2025</div>
         </div>
         <div class="convergence-card">
@@ -504,8 +535,18 @@
           <div class="convergence-card__date">Documentation</div>
         </div>
         <div class="convergence-card">
-          <div class="convergence-card__name">MCP Protocol</div>
-          <div class="convergence-card__what">Deprecated HTTP+SSE transport in favour of Streamable HTTP. The protocol layer itself evolving.</div>
+          <div class="convergence-card__name">Cloudflare</div>
+          <div class="convergence-card__what">Agents SDK with Durable Objects for stateful sessions. Added resumable streaming (Nov 2025). 15+ releases in 13 months.</div>
+          <div class="convergence-card__date">2025 &ndash; 2026</div>
+        </div>
+        <div class="convergence-card">
+          <div class="convergence-card__name">Restate</div>
+          <div class="convergence-card__what">Durable execution for AI agents. "Durable AI Loops" &mdash; pushing durable execution toward the session boundary.</div>
+          <div class="convergence-card__date">2025 &ndash; 2026</div>
+        </div>
+        <div class="convergence-card">
+          <div class="convergence-card__name">Inngest</div>
+          <div class="convergence-card__what">Built Realtime on top of durable functions to bridge the gap between backend execution and client delivery. Acknowledged the gap explicitly.</div>
           <div class="convergence-card__date">May 2025</div>
         </div>
       </div>
@@ -517,62 +558,65 @@
     <div class="container">
       <div class="stats-grid">
         <div class="stat">
-          <div class="stat__number">35<span class="stat__of">/35</span></div>
-          <div class="stat__label">AI infrastructure vendors with no stream resumption at the infrastructure level</div>
+          <div class="stat__number">0<span class="stat__of">/37</span></div>
+          <div class="stat__label">vendors provide the complete session layer across all three problem areas</div>
         </div>
         <div class="stat">
-          <div class="stat__number">33<span class="stat__of">/35</span></div>
+          <div class="stat__number">33<span class="stat__of">/37</span></div>
           <div class="stat__label">vendors with no agent health signal or crash detection</div>
         </div>
         <div class="stat">
-          <div class="stat__number">32<span class="stat__of">/35</span></div>
-          <div class="stat__label">vendors with no multi-device fan-out</div>
+          <div class="stat__number">32<span class="stat__of">/37</span></div>
+          <div class="stat__label">vendors with no multi-device fan-out for AI sessions</div>
         </div>
         <div class="stat">
-          <div class="stat__number">26<span class="stat__of">/35</span></div>
-          <div class="stat__label">vendors where SSE fragility is a documented developer pain point</div>
+          <div class="stat__number">30<span class="stat__of">/37</span></div>
+          <div class="stat__label">vendors with no human-in-the-loop delivery infrastructure</div>
         </div>
       </div>
-      <p class="stats-source">Based on a cross-vendor synthesis of 35 AI infrastructure vendors, March 2026</p>
+      <p class="stats-source">Based on a cross-vendor analysis of 37 AI infrastructure vendors, March 2026. Everyone is solving pieces. Nobody provides the complete layer.</p>
 
       <div class="vendor-list">
         <h3 class="vendor-list__title">Vendors analysed</h3>
         <div class="vendor-list__grid">
           <a href="https://ably.com/ai-transport" target="_blank" rel="noopener">Ably</a>
-          <a href="https://www.pubnub.com" target="_blank" rel="noopener">PubNub</a>
-          <a href="https://pusher.com" target="_blank" rel="noopener">Pusher</a>
-          <a href="https://www.emqx.io" target="_blank" rel="noopener">EMQX</a>
-          <a href="https://electric-sql.com" target="_blank" rel="noopener">ElectricSQL</a>
           <a href="https://vercel.com/ai" target="_blank" rel="noopener">Vercel AI SDK</a>
-          <a href="https://www.langchain.com" target="_blank" rel="noopener">LangChain</a>
-          <a href="https://www.langchain.com/langgraph" target="_blank" rel="noopener">LangGraph</a>
+          <a href="https://www.langchain.com/langgraph" target="_blank" rel="noopener">LangChain / LangGraph</a>
           <a href="https://tanstack.com/ai" target="_blank" rel="noopener">TanStack AI</a>
-          <a href="https://ag-ui.com" target="_blank" rel="noopener">AG-UI</a>
+          <a href="https://ag-ui.com" target="_blank" rel="noopener">AG-UI / CopilotKit</a>
+          <a href="https://mastra.ai" target="_blank" rel="noopener">Mastra</a>
+          <a href="https://platform.openai.com/docs/guides/agents-sdk" target="_blank" rel="noopener">OpenAI Agents SDK</a>
+          <a href="https://docs.anthropic.com/en/docs/agents-and-tools/claude-code" target="_blank" rel="noopener">Claude Agent SDK</a>
+          <a href="https://www.crewai.com" target="_blank" rel="noopener">CrewAI</a>
+          <a href="https://ai.pydantic.dev" target="_blank" rel="noopener">Pydantic AI</a>
           <a href="https://temporal.io" target="_blank" rel="noopener">Temporal</a>
           <a href="https://restate.dev" target="_blank" rel="noopener">Restate</a>
           <a href="https://www.inngest.com" target="_blank" rel="noopener">Inngest</a>
-          <a href="https://upstash.com" target="_blank" rel="noopener">Upstash</a>
+          <a href="https://trigger.dev" target="_blank" rel="noopener">Trigger.dev</a>
           <a href="https://www.convex.dev" target="_blank" rel="noopener">Convex</a>
           <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>
           <a href="https://firebase.google.com" target="_blank" rel="noopener">Firebase</a>
-          <a href="https://www.crewai.com" target="_blank" rel="noopener">CrewAI</a>
-          <a href="https://developers.cloudflare.com/agents" target="_blank" rel="noopener">Cloudflare Agents</a>
-          <a href="https://livekit.io" target="_blank" rel="noopener">LiveKit</a>
-          <a href="https://getstream.io" target="_blank" rel="noopener">Stream</a>
-          <a href="https://sendbird.com" target="_blank" rel="noopener">Sendbird</a>
-          <a href="https://www.twilio.com" target="_blank" rel="noopener">Twilio</a>
+          <a href="https://neon.tech" target="_blank" rel="noopener">Neon</a>
+          <a href="https://upstash.com" target="_blank" rel="noopener">Upstash</a>
+          <a href="https://electric-sql.com" target="_blank" rel="noopener">ElectricSQL</a>
+          <a href="https://www.pubnub.com" target="_blank" rel="noopener">PubNub</a>
+          <a href="https://pusher.com" target="_blank" rel="noopener">Pusher</a>
           <a href="https://socket.io" target="_blank" rel="noopener">Socket.IO</a>
-          <a href="https://centrifugal.dev" target="_blank" rel="noopener">Centrifugo</a>
-          <a href="https://nats.io" target="_blank" rel="noopener">NATS</a>
-          <a href="https://www.rabbitmq.com" target="_blank" rel="noopener">RabbitMQ</a>
-          <a href="https://kafka.apache.org" target="_blank" rel="noopener">Apache Kafka</a>
-          <a href="https://azure.microsoft.com/en-gb/products/signalr-service" target="_blank" rel="noopener">Azure SignalR</a>
-          <a href="https://aws.amazon.com/api-gateway" target="_blank" rel="noopener">AWS API Gateway</a>
-          <a href="https://cloud.google.com/pubsub" target="_blank" rel="noopener">Google Pub/Sub</a>
-          <a href="https://www.cometchat.com" target="_blank" rel="noopener">CometChat</a>
+          <a href="https://livekit.io" target="_blank" rel="noopener">LiveKit</a>
+          <a href="https://www.pipecat.ai" target="_blank" rel="noopener">Pipecat / Daily</a>
+          <a href="https://elevenlabs.io" target="_blank" rel="noopener">ElevenLabs</a>
+          <a href="https://deepgram.com" target="_blank" rel="noopener">Deepgram</a>
+          <a href="https://vapi.ai" target="_blank" rel="noopener">Vapi</a>
+          <a href="https://www.retellai.com" target="_blank" rel="noopener">Retell AI</a>
+          <a href="https://www.agora.io" target="_blank" rel="noopener">Agora</a>
+          <a href="https://platform.openai.com/docs/guides/realtime" target="_blank" rel="noopener">OpenAI Realtime API</a>
           <a href="https://knock.app" target="_blank" rel="noopener">Knock</a>
           <a href="https://www.courier.com" target="_blank" rel="noopener">Courier</a>
-          <a href="https://docs.modelcontextprotocol.io" target="_blank" rel="noopener">MCP Protocol</a>
+          <a href="https://novu.co" target="_blank" rel="noopener">Novu</a>
+          <a href="https://onesignal.com" target="_blank" rel="noopener">OneSignal</a>
+          <a href="https://developers.cloudflare.com/agents" target="_blank" rel="noopener">Cloudflare Agents</a>
+          <a href="https://liveblocks.io" target="_blank" rel="noopener">Liveblocks</a>
+          <a href="https://partykit.io" target="_blank" rel="noopener">PartyKit</a>
         </div>
       </div>
     </div>
@@ -593,9 +637,9 @@
 
       <div class="category-comparison">
         <div class="category-comparison__col">
-          <h4>Durable Execution <span class="category-comparison__example">e.g. Temporal</span></h4>
+          <h4>Durable Execution <span class="category-comparison__example">e.g. Temporal, Restate, Inngest</span></h4>
           <ul>
-            <li><strong>Decouples</strong> application logic from infrastructure failure</li>
+            <li><strong>What it makes bulletproof:</strong> the agent running on the backend</li>
             <li><strong>What outlives failure:</strong> the execution</li>
             <li><strong>What stays stateless:</strong> your backend code</li>
             <li><strong>Mental model:</strong> "Write code as if failure doesn't exist"</li>
@@ -605,12 +649,142 @@
         <div class="category-comparison__col">
           <h4>Durable Sessions</h4>
           <ul>
-            <li><strong>Decouples</strong> agent interaction from transport failure</li>
+            <li><strong>What it makes bulletproof:</strong> the experience between agent and user</li>
             <li><strong>What outlives failure:</strong> the session</li>
             <li><strong>What stays stateless:</strong> your agent and your client</li>
             <li><strong>Mental model:</strong> "Build AI experiences as if disconnects don't exist"</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Developer voices -->
+  <section class="section" id="developers">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">What developers are saying</span>
+        <h2 class="section__title">The same problems, everywhere</h2>
+        <p class="section__lead">
+          Across GitHub issues, community forums, and Hacker News &mdash; developers building production AI applications
+          keep describing the same infrastructure gaps. They don't call it "durable sessions." They describe the pain.
+        </p>
+      </div>
+
+      <div class="convergence-grid">
+        <div class="convergence-card">
+          <div class="convergence-card__what">"I have an old production app with 50K+ users... been stuck for 3 weeks on agent.network() streaming."</div>
+          <div class="convergence-card__name"><a href="https://github.com/mastra-ai/mastra/issues" target="_blank" rel="noopener">Mastra developer, GitHub</a></div>
+        </div>
+        <div class="convergence-card">
+          <div class="convergence-card__what">"To solve this we would need to have a channel to the server that allows transporting that information. WebSockets are one option."</div>
+          <div class="convergence-card__name"><a href="https://github.com/vercel/ai/issues/6502" target="_blank" rel="noopener">Lars Grammel, Vercel AI SDK lead maintainer</a></div>
+        </div>
+        <div class="convergence-card">
+          <div class="convergence-card__what">"We kept rewriting the same infrastructure to actually show agents to users."</div>
+          <div class="convergence-card__name"><a href="https://news.ycombinator.com" target="_blank" rel="noopener">Pydantic AI developer, Hacker News</a></div>
+        </div>
+        <div class="convergence-card">
+          <div class="convergence-card__what">"Reconnecting creates a new session. There's no way to pick up where you left off."</div>
+          <div class="convergence-card__name"><a href="https://platform.openai.com/docs/guides/realtime" target="_blank" rel="noopener">OpenAI Realtime API developer</a></div>
+        </div>
+        <div class="convergence-card">
+          <div class="convergence-card__what">"This is NOT a durable delivery format, it is purely fire-n-forget."</div>
+          <div class="convergence-card__name"><a href="https://community.temporal.io" target="_blank" rel="noopener">Temporal maintainer, on frontend delivery</a></div>
+        </div>
+        <div class="convergence-card">
+          <div class="convergence-card__what">Feature request for WebSocket human-input event streams &mdash; technically detailed, with a pull request offered. Closed as "not planned."</div>
+          <div class="convergence-card__name"><a href="https://github.com/crewAIInc/crewAI/issues/3259" target="_blank" rel="noopener">CrewAI, GitHub Issue #3259</a></div>
+        </div>
+        <div class="convergence-card">
+          <div class="convergence-card__what">"A critical 2-hour founder strategy session that cannot be recreated." On a call stuck in "ongoing" status with no transcript recovery.</div>
+          <div class="convergence-card__name"><a href="https://www.retellai.com" target="_blank" rel="noopener">Retell AI community</a></div>
+        </div>
+        <div class="convergence-card">
+          <div class="convergence-card__what">"Subscriptions are lost in all cases when the tab running realtime is not in focus."</div>
+          <div class="convergence-card__name"><a href="https://supabase.com/docs" target="_blank" rel="noopener">Supabase documentation</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Durable Execution complement -->
+  <section class="section section--accent" id="complement">
+    <div class="container">
+      <div class="sse-banner">
+        <div class="sse-banner__content">
+          <span class="sse-banner__label">Complementary layers</span>
+          <h2 class="sse-banner__title">Durable Execution + Durable Sessions</h2>
+          <p class="sse-banner__text">
+            Durable Execution (Temporal, Restate, Inngest) made the agent bulletproof &mdash; workflows survive crashes,
+            retries are automatic, state is checkpointed. But durable execution has no mechanism for streaming results
+            to a user's screen. The agent survives. The experience doesn't.
+          </p>
+          <p class="sse-banner__text">
+            Durable Sessions makes the experience bulletproof. The user sees every token, on every device, even through
+            disconnects. If the user goes offline, the session is there when they come back. If the agent crashes,
+            the user knows immediately.
+          </p>
+          <p class="sse-banner__kicker">
+            Both layers are needed. Neither alone is sufficient for production AI.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who's talking about this -->
+  <section class="section section--dark" id="talking">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__eyebrow">The conversation</span>
+        <h2 class="section__title">Who's talking about this</h2>
+        <p class="section__lead">
+          The concept of durable sessions is being discussed across blog posts, X threads, protocol specs, and conference talks.
+        </p>
+      </div>
+
+      <div class="references-grid">
+        <a href="https://electric-sql.com/blog/2026/01/12/durable-sessions-for-collaborative-ai" class="reference-card" target="_blank" rel="noopener">
+          <span class="reference-card__source">James Arthur, ElectricSQL</span>
+          <span class="reference-card__title">"Durable Sessions &mdash; the key pattern for collaborative AI"</span>
+          <span class="reference-card__type">Blog post &middot; Jan 2026 &middot; 75K views on X</span>
+        </a>
+        <a href="https://electric-sql.com/blog/2025/12/09/announcing-durable-streams" class="reference-card" target="_blank" rel="noopener">
+          <span class="reference-card__source">Kyle Mathews &amp; Sam Willis, ElectricSQL</span>
+          <span class="reference-card__title">"Announcing Durable Streams"</span>
+          <span class="reference-card__type">Blog post &middot; Dec 2025 &middot; 1,400 GitHub stars</span>
+        </a>
+        <a href="https://temporal.io/blog/temporal-raises-usd300m-series-d-at-a-usd5b-valuation" class="reference-card" target="_blank" rel="noopener">
+          <span class="reference-card__source">Temporal</span>
+          <span class="reference-card__title">Series D: $5B valuation validates "Durable Execution" category</span>
+          <span class="reference-card__type">Feb 2026 &middot; AWS adopted the term for Lambda Durable Functions</span>
+        </a>
+        <a href="https://stack.convex.dev/durable-workflows-and-strong-guarantees" class="reference-card" target="_blank" rel="noopener">
+          <span class="reference-card__source">Ian Macartney, Convex</span>
+          <span class="reference-card__title">"Agents Need Durable Workflows and Strong Guarantees"</span>
+          <span class="reference-card__type">Blog post</span>
+        </a>
+        <a href="https://www.restate.dev/blog/durable-ai-loops-fault-tolerance-across-frameworks-and-without-handcuffs" class="reference-card" target="_blank" rel="noopener">
+          <span class="reference-card__source">Stephan Ewen, Restate</span>
+          <span class="reference-card__title">"Durable AI Loops"</span>
+          <span class="reference-card__type">Blog post &middot; Apache Flink co-creator on durable agents</span>
+        </a>
+        <a href="https://upstash.com/blog/resumable-llm-streams" class="reference-card" target="_blank" rel="noopener">
+          <span class="reference-card__source">Upstash</span>
+          <span class="reference-card__title">"How to Build LLM Streams That Survive Reconnects"</span>
+          <span class="reference-card__type">Blog post</span>
+        </a>
+        <a href="https://stardrift.ai/blog/streaming-resumptions" class="reference-card" target="_blank" rel="noopener">
+          <span class="reference-card__source">Felipe Mautner, Stardrift</span>
+          <span class="reference-card__title">"Is resumable LLM streaming hard? No, it's just annoying."</span>
+          <span class="reference-card__type">Blog post &middot; Practitioner perspective (YC-backed)</span>
+        </a>
+        <a href="https://github.com/vercel/ai/issues/6502" class="reference-card" target="_blank" rel="noopener">
+          <span class="reference-card__source">Vercel AI SDK</span>
+          <span class="reference-card__title">ChatTransport &amp; the WebSocket transport discussion</span>
+          <span class="reference-card__type">GitHub Issue #6502</span>
+        </a>
       </div>
     </div>
   </section>
