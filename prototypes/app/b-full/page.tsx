@@ -359,8 +359,8 @@ export default function PrototypeBFull() {
 
             <div className="relative mb-4">
               <h2 className="sb1-enter text-4xl md:text-5xl font-bold tracking-tight relative z-10">Connection severed</h2>
-              <h2 className="sb1-split-r absolute inset-0 text-4xl md:text-5xl font-bold tracking-tight text-red-500/50" style={{ mixBlendMode: "screen" }} aria-hidden>Connection severed</h2>
-              <h2 className="sb1-split-b absolute inset-0 text-4xl md:text-5xl font-bold tracking-tight text-cyan-500/50" style={{ mixBlendMode: "screen" }} aria-hidden>Connection severed</h2>
+              <h2 className="sb1-split-r absolute inset-0 text-4xl md:text-5xl font-bold tracking-tight text-red-500/50" style={{ mixBlendMode: "screen" }} aria-hidden="true">Connection severed</h2>
+              <h2 className="sb1-split-b absolute inset-0 text-4xl md:text-5xl font-bold tracking-tight text-cyan-500/50" style={{ mixBlendMode: "screen" }} aria-hidden="true">Connection severed</h2>
             </div>
             <p className="sb1-enter text-gray-400 text-lg max-w-lg mx-auto">
               The HTTP stream closes. The transport layer is gone.

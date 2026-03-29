@@ -88,7 +88,7 @@ export function GlitchCanvas() {
         }
       }
 
-      if (glitchIntensity > 0.02) {
+      if (glitchActive && glitchIntensity > 0.05) {
         const imageData = ctx.getImageData(0, 0, w, h);
         const data = imageData.data;
         const noiseLevel = glitchIntensity * 8;
@@ -143,7 +143,7 @@ export function GlitchText({
           clipPath: "inset(10% 0 30% 0)",
           transform: `translate(${2 * intensity}px, ${1 * intensity}px)`,
         }}
-        aria-hidden
+        aria-hidden="true"
       >
         {children}
       </span>
@@ -154,7 +154,7 @@ export function GlitchText({
           clipPath: "inset(40% 0 10% 0)",
           transform: `translate(${-2 * intensity}px, ${-1 * intensity}px)`,
         }}
-        aria-hidden
+        aria-hidden="true"
       >
         {children}
       </span>
