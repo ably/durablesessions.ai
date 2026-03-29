@@ -675,26 +675,28 @@ export default function PrototypeBFull() {
 
             <div className="fade-in-stagger grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
-                { name: "ElectricSQL", what: "Published \"Durable Sessions\" blog post (Jan 2026). Shipped Durable Streams protocol (1,400 GitHub stars). Announced \"Durable Transports\" adapters for TanStack AI and Vercel AI SDK.", date: "Dec 2025 - Mar 2026" },
-                { name: "EMQX", what: "\"Durable Sessions\" as a named MQTT feature - session state surviving broker restarts.", date: "Production feature" },
-                { name: "Vercel", what: "Building @ai-sdk/durable-agent. Pluggable ChatTransport in AI SDK v5.", date: "In development" },
-                { name: "Ably", what: "AI Transport - durable sessions as the infrastructure layer between agents and human devices.", date: "March 2026" },
-                { name: "Upstash", what: "\"Resumable AI SDK Streams\" using Redis Streams for stream recovery.", date: "Published solution" },
-                { name: "Convex", what: "Agent component with persistent threads, durable workflows, and real-time sync.", date: "Agent component" },
-                { name: "Temporal", what: "Coined \"Durable Execution\" ($5B valuation). Their community recommends external realtime providers for frontend delivery.", date: "Established category" },
-                { name: "AG-UI", what: "Built pluggable transport from the ground up. The protocol moved beyond fixed transport assumptions.", date: "2025" },
-                { name: "TanStack AI", what: "ConnectionAdapter interface - explicitly designed for third-party transport providers.", date: "Documentation" },
-                { name: "Cloudflare", what: "Agents SDK with Durable Objects for stateful sessions. Added resumable streaming (Nov 2025). 15+ releases in 13 months.", date: "2025 - 2026" },
-                { name: "Restate", what: "Durable execution for AI agents. \"Durable AI Loops\" - pushing durable execution toward the session boundary.", date: "2025 - 2026" },
-                { name: "Inngest", what: "Built Realtime on top of durable functions to bridge the gap between backend execution and client delivery.", date: "May 2025" },
+                { name: "ElectricSQL", what: "Published \"Durable Sessions\" blog post (Jan 2026). Shipped Durable Streams protocol (1,400 GitHub stars). Announced \"Durable Transports\" adapters for TanStack AI and Vercel AI SDK.", date: "Dec 2025 - Mar 2026", href: "https://electric-sql.com" },
+                { name: "EMQX", what: "\"Durable Sessions\" as a named MQTT feature - session state surviving broker restarts.", date: "Production feature", href: "https://docs.emqx.com/en/emqx/latest/durability/durability_introduction.html" },
+                { name: "Vercel", what: "Building @ai-sdk/durable-agent. Pluggable ChatTransport in AI SDK v5.", date: "In development", href: "https://vercel.com/ai" },
+                { name: "Ably", what: "AI Transport - durable sessions as the infrastructure layer between agents and human devices.", date: "March 2026", href: "https://ably.com/ai-transport" },
+                { name: "Upstash", what: "\"Resumable AI SDK Streams\" using Redis Streams for stream recovery.", date: "Published solution", href: "https://upstash.com/blog/resumable-llm-streams" },
+                { name: "Convex", what: "Agent component with persistent threads, durable workflows, and real-time sync.", date: "Agent component", href: "https://www.convex.dev/components/agent" },
+                { name: "Temporal", what: "Coined \"Durable Execution\" ($5B valuation). Their community recommends external realtime providers for frontend delivery.", date: "Established category", href: "https://temporal.io" },
+                { name: "AG-UI", what: "Built pluggable transport from the ground up. The protocol moved beyond fixed transport assumptions.", date: "2025", href: "https://ag-ui.com" },
+                { name: "TanStack AI", what: "ConnectionAdapter interface - explicitly designed for third-party transport providers.", date: "Documentation", href: "https://tanstack.com/ai" },
+                { name: "Cloudflare", what: "Agents SDK with Durable Objects for stateful sessions. Added resumable streaming (Nov 2025). 15+ releases in 13 months.", date: "2025 - 2026", href: "https://developers.cloudflare.com/agents" },
+                { name: "Restate", what: "Durable execution for AI agents. \"Durable AI Loops\" - pushing durable execution toward the session boundary.", date: "2025 - 2026", href: "https://restate.dev" },
+                { name: "Inngest", what: "Built Realtime on top of durable functions to bridge the gap between backend execution and client delivery.", date: "May 2025", href: "https://www.inngest.com" },
               ].map((v) => (
-                <GlitchCard key={v.name} className="fade-in-child">
-                  <div className="flex items-baseline justify-between mb-2">
-                    <h3 className="font-semibold text-cyan-400">{v.name}</h3>
-                    <span className="font-mono text-[10px] text-gray-600">{v.date}</span>
-                  </div>
-                  <p className="text-sm text-gray-400">{v.what}</p>
-                </GlitchCard>
+                <a key={v.name} href={v.href} target="_blank" rel="noopener noreferrer" className="block">
+                  <GlitchCard className="fade-in-child h-full hover:border-cyan-500/30">
+                    <div className="flex items-baseline justify-between mb-2">
+                      <h3 className="font-semibold text-cyan-400">{v.name}</h3>
+                      <span className="font-mono text-[10px] text-gray-600">{v.date}</span>
+                    </div>
+                    <p className="text-sm text-gray-400">{v.what}</p>
+                  </GlitchCard>
+                </a>
               ))}
             </div>
           </div>
@@ -725,17 +727,48 @@ export default function PrototypeBFull() {
 
             <div className="fade-in">
               <h3 className="font-mono text-xs text-gray-500 text-center mb-4 tracking-widest uppercase">Vendors analysed</h3>
-              <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-gray-500">
+              <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs">
                 {[
-                  "Ably", "Vercel AI SDK", "LangChain / LangGraph", "TanStack AI", "AG-UI / CopilotKit",
-                  "Mastra", "OpenAI Agents SDK", "Claude Agent SDK", "CrewAI", "Pydantic AI",
-                  "Temporal", "Restate", "Inngest", "Trigger.dev", "Convex", "Supabase", "Firebase",
-                  "Neon", "Upstash", "ElectricSQL", "PubNub", "Pusher", "Socket.IO", "LiveKit",
-                  "Pipecat / Daily", "ElevenLabs", "Deepgram", "Vapi", "Retell AI", "Agora",
-                  "OpenAI Realtime API", "Knock", "Courier", "Novu", "OneSignal",
-                  "Cloudflare Agents", "Liveblocks", "PartyKit",
+                  { name: "Ably", href: "https://ably.com/ai-transport" },
+                  { name: "Vercel AI SDK", href: "https://vercel.com/ai" },
+                  { name: "LangChain / LangGraph", href: "https://www.langchain.com/langgraph" },
+                  { name: "TanStack AI", href: "https://tanstack.com/ai" },
+                  { name: "AG-UI / CopilotKit", href: "https://ag-ui.com" },
+                  { name: "Mastra", href: "https://mastra.ai" },
+                  { name: "OpenAI Agents SDK", href: "https://platform.openai.com/docs/guides/agents-sdk" },
+                  { name: "Claude Agent SDK", href: "https://docs.anthropic.com/en/docs/agents-and-tools/claude-code" },
+                  { name: "CrewAI", href: "https://www.crewai.com" },
+                  { name: "Pydantic AI", href: "https://ai.pydantic.dev" },
+                  { name: "Temporal", href: "https://temporal.io" },
+                  { name: "Restate", href: "https://restate.dev" },
+                  { name: "Inngest", href: "https://www.inngest.com" },
+                  { name: "Trigger.dev", href: "https://trigger.dev" },
+                  { name: "Convex", href: "https://www.convex.dev" },
+                  { name: "Supabase", href: "https://supabase.com" },
+                  { name: "Firebase", href: "https://firebase.google.com" },
+                  { name: "Neon", href: "https://neon.tech" },
+                  { name: "Upstash", href: "https://upstash.com" },
+                  { name: "ElectricSQL", href: "https://electric-sql.com" },
+                  { name: "PubNub", href: "https://www.pubnub.com" },
+                  { name: "Pusher", href: "https://pusher.com" },
+                  { name: "Socket.IO", href: "https://socket.io" },
+                  { name: "LiveKit", href: "https://livekit.io" },
+                  { name: "Pipecat / Daily", href: "https://www.pipecat.ai" },
+                  { name: "ElevenLabs", href: "https://elevenlabs.io" },
+                  { name: "Deepgram", href: "https://deepgram.com" },
+                  { name: "Vapi", href: "https://vapi.ai" },
+                  { name: "Retell AI", href: "https://www.retellai.com" },
+                  { name: "Agora", href: "https://www.agora.io" },
+                  { name: "OpenAI Realtime API", href: "https://platform.openai.com/docs/guides/realtime" },
+                  { name: "Knock", href: "https://knock.app" },
+                  { name: "Courier", href: "https://www.courier.com" },
+                  { name: "Novu", href: "https://novu.co" },
+                  { name: "OneSignal", href: "https://onesignal.com" },
+                  { name: "Cloudflare Agents", href: "https://developers.cloudflare.com/agents" },
+                  { name: "Liveblocks", href: "https://liveblocks.io" },
+                  { name: "PartyKit", href: "https://partykit.io" },
                 ].map((v) => (
-                  <span key={v} className="hover:text-cyan-400/60 transition-colors">{v}</span>
+                  <a key={v.name} href={v.href} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-cyan-400/80 transition-colors">{v.name}</a>
                 ))}
               </div>
             </div>
