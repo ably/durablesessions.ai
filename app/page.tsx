@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -270,10 +269,10 @@ export default function PrototypeBFull() {
 
       {/* ── Navigation ── */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-8 py-4 bg-[#07070e]/80 backdrop-blur-sm border-b border-white/5">
-        <Link href="/b-full" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <span className="font-mono text-sm font-bold text-cyan-400 tracking-widest">DS</span>
           <span className="text-sm font-medium text-gray-300 hidden sm:inline">Durable Sessions</span>
-        </Link>
+        </a>
         <div className="flex items-center gap-6 text-xs font-mono text-gray-500">
           <a href="#problem" className="hover:text-cyan-400 transition-colors hidden md:inline">The Gap</a>
           <a href="#definition" className="hover:text-cyan-400 transition-colors hidden md:inline">Definition</a>
