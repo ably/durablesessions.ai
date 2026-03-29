@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+:root {
+  --background: #07070e;
+  --foreground: #e8e8f0;
+  --accent: #6366f1;
+  --accent-cyan: #06b6d4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Shared scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 3px;
+}
+
+/* Session state indicator - the thing that never breaks */
+.session-indicator {
+  position: fixed;
+  right: 32px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.session-bar {
+  width: 3px;
+  height: 120px;
+  background: linear-gradient(to bottom, #6366f1, #06b6d4);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.session-bar::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.4), transparent);
+  animation: session-pulse 2s ease-in-out infinite;
+}
+
+@keyframes session-pulse {
+  0% { top: -100%; }
+  100% { top: 100%; }
+}
+
+.session-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(99, 102, 241, 0.6);
+}
+
+/* Canvas overlay for shader effects */
+canvas.effect-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Fade-in on scroll (IntersectionObserver) ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children within card grids */
+.fade-in-stagger > .fade-in-child {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.fade-in-stagger.visible > .fade-in-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Generate stagger delays for up to 12 children */
+.fade-in-stagger.visible > .fade-in-child:nth-child(1) { transition-delay: 0ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(2) { transition-delay: 50ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(3) { transition-delay: 100ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(4) { transition-delay: 150ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(5) { transition-delay: 200ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(6) { transition-delay: 250ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(7) { transition-delay: 300ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(8) { transition-delay: 350ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(9) { transition-delay: 400ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(10) { transition-delay: 450ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(11) { transition-delay: 500ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(12) { transition-delay: 550ms; }
