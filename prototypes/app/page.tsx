@@ -60,6 +60,21 @@ export default function Home() {
               engineering aesthetic with subtle noise grain.
             </p>
           </Link>
+          <Link
+            href="/b-full"
+            className="group block p-8 rounded-xl border border-cyan-500/30 bg-cyan-500/[0.02] hover:border-cyan-500/50 transition-all duration-300 text-left hover:bg-cyan-500/[0.04]"
+          >
+            <div className="flex items-baseline gap-4 mb-3">
+              <span className="text-sm font-mono text-cyan-400">B+</span>
+              <h2 className="text-2xl font-semibold group-hover:text-cyan-300 transition-colors">
+                Glitch Protocol — Full Site
+              </h2>
+            </div>
+            <p className="text-gray-500 text-sm">
+              Selected direction with all content: scroll narrative + problem
+              framing, definition, convergence, stats, developer voices, CTA.
+            </p>
+          </Link>
         </div>
       </div>
     </main>
