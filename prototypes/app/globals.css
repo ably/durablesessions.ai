@@ -90,3 +90,41 @@ canvas.effect-layer {
   pointer-events: none;
   z-index: 1;
 }
+
+/* ── Fade-in on scroll (IntersectionObserver) ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children within card grids */
+.fade-in-stagger > .fade-in-child {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.fade-in-stagger.visible > .fade-in-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Generate stagger delays for up to 12 children */
+.fade-in-stagger.visible > .fade-in-child:nth-child(1) { transition-delay: 0ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(2) { transition-delay: 50ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(3) { transition-delay: 100ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(4) { transition-delay: 150ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(5) { transition-delay: 200ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(6) { transition-delay: 250ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(7) { transition-delay: 300ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(8) { transition-delay: 350ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(9) { transition-delay: 400ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(10) { transition-delay: 450ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(11) { transition-delay: 500ms; }
+.fade-in-stagger.visible > .fade-in-child:nth-child(12) { transition-delay: 550ms; }

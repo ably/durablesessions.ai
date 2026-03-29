@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Durable Sessions — Prototypes",
-  description: "Visual direction prototypes for durablesessions.ai",
+  title: "Durable Sessions - The Missing Layer Between AI Agents and Users",
+  description: "Durable Sessions is the emerging infrastructure category for AI experiences that survive disconnects, span devices, and outlive any single connection.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
