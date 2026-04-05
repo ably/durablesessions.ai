@@ -686,6 +686,7 @@ export default function PrototypeBFull() {
                 { name: "Cloudflare", what: "Agents SDK with Durable Objects for stateful sessions. Added resumable streaming (Nov 2025). 15+ releases in 13 months.", date: "2025 - 2026", href: "https://developers.cloudflare.com/agents" },
                 { name: "Restate", what: "Durable execution for AI agents. \"Durable AI Loops\" - pushing durable execution toward the session boundary.", date: "2025 - 2026", href: "https://restate.dev" },
                 { name: "Inngest", what: "Built Realtime on top of durable functions to bridge the gap between backend execution and client delivery.", date: "May 2025", href: "https://www.inngest.com" },
+                { name: "Kitaru", what: "Durable execution for Python AI agents. Checkpoint/replay, wait/resume for human-in-the-loop, durable agent memory, and execution management dashboard.", date: "Open source, 2026", href: "https://kitaru.ai" },
               ].map((v) => (
                 <a key={v.name} href={v.href} target="_blank" rel="noopener noreferrer" className="block">
                   <GlitchCard className="fade-in-child h-full hover:border-cyan-500/30">
@@ -741,6 +742,7 @@ export default function PrototypeBFull() {
                   { name: "Temporal", href: "https://temporal.io" },
                   { name: "Restate", href: "https://restate.dev" },
                   { name: "Inngest", href: "https://www.inngest.com" },
+                  { name: "Kitaru", href: "https://kitaru.ai" },
                   { name: "Trigger.dev", href: "https://trigger.dev" },
                   { name: "Convex", href: "https://www.convex.dev" },
                   { name: "Supabase", href: "https://supabase.com" },
